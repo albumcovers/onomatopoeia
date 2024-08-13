@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+    <head>
+        <title>[you are in the wrong place]</title>
+        <link
+            href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+            rel="stylesheet"
+        />
+        <script>
+            function titleFlash() {
+                titles = [
+                    "⚠️ You aren't supposed to be here.",
+                    "‼️ Spoilers ahead!",
+                    "😵 This is cheating!",
+                ];
+
+                let index = 0;
+
+                setInterval(() => {
+                    document.title = titles[index];
+                    index = (index + 1) % titles.length;
+                }, 300);
+            }
+
+            titleFlash();
+        </script>
+
+        <style>
+            :root {
+                --warning: #f4b942;
+                --warning-rgb: rgba(244, 185, 66, 0.3);
+
+                --notice: #677db7;
+                --notice-rgb: rgba(103, 125, 183, 0.3);
+
+                --error: #fb5012;
+                --error-rgb: rgba(251, 80, 18, 0.3);
+            }
+
+            html {
+                background: black;
+                padding: 40px;
+                color: white;
+                font-family: monospace;
+            }
+
+            .warning {
+                padding: 10px;
+                color: var(--warning);
+                width: 350px;
+                background: var(--warning-rgb);
+                border: solid 1px var(--warning);
+            }
+
+            a {
+                color: white;
+                text-decoration: none;
+            }
+
+            a:hover {
+                text-decoration: underline;
+            }
+        </style>
+    </head>
+    <body>
+        <h1><i class="bx bxs-data"></i> onomatopoeia</h1>
+        <div class="warning">
+            <i class="bx bxs-bug"></i> Onomatopoeia is in <b>beta</b>. Expect
+            bugs.
+        </div>
+        <br /><br />
+        <h3>Rules</h3>
+        <ol>
+            <li>Please do not attempt to reverse engineer puzzles</li>
+            <li>Please do not go to levels directly</li>
+            <li>
+                There will be <i>no</i> hidden codes in the source code, please
+                don't go rummaging through the code
+            </li>
+            <li>Click anywhere on this page to start the audio playing.</li>
+        </ol>
+        <br /><br />
+        <h3>
+            <a href="level_1.html"
+                ><i class="bx bxs-right-arrow"></i> Click Me to Get Started</a
+            >
+        </h3>
+    </body>
+</html>
