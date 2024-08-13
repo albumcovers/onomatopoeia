@@ -1,1 +1,64 @@
-since neocities decided to silence me, i'm making onomatopoeia. a new web puzzle.
+<!doctype html>
+<html>
+    <head>
+        <title>onomatopoeia | a web puzzle</title>
+        <style>
+            html,
+            body {
+                width: 100%;
+                padding: 0;
+                margin: 0;
+                height: 100%;
+            }
+
+            .overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: flex;
+                justify-content: center;
+                text-align: center;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                color: white;
+                font-family: monospace;
+                align-items: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="overlay">
+            <h1>click to play audio // enter</h1>
+        </div>
+        <iframe src="start.html" style="border: 0; width: 100%; height: 100%"
+            >Your browser doesn't support iFrames.</iframe
+        >
+        <script>
+            let tracks = [
+                "https://onomatopoeia.vercel.app/Key.mp3",
+                "https://onomatopoeia.vercel.app/Beginning2.mp3",
+            ];
+
+            let currentTrackIndex = 0;
+            let audio = new Audio();
+
+            function jukebox() {
+                if (!audio.paused) {
+                    return;
+                }
+
+                audio.src = tracks[currentTrackIndex];
+                audio.play();
+
+                currentTrackIndex = (currentTrackIndex + 1) % tracks.length;
+            }
+
+            let click = document.querySelector(".overlay");
+            click.addEventListener("click", () => {
+                click.remove();
+                jukebox();
+            });
+        </script>
+    </body>
+</html>
