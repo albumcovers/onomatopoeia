@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+    <head>
+        <title>[you are in the wrong place]</title>
+        <link
+            href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+            rel="stylesheet"
+        />
+        <script>
+            function titleFlash() {
+                titles = [
+                    "⚠️ You aren't supposed to be here.",
+                    "‼️ Spoilers ahead!",
+                    "😵 This is cheating!",
+                ];
+
+                let index = 0;
+
+                setInterval(() => {
+                    document.title = titles[index];
+                    index = (index + 1) % titles.length;
+                }, 300);
+            }
+
+            titleFlash();
+        </script>
+
+        <style></style>
+    </head>
+    <body></body>
+</html>
